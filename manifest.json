@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Emotional Peary",
+  "version": "1.1.0",
+  "description": "Makes Katy Peary Happy ⅗, Angry ⅕, and Sad ⅕ of The Time. Adds a Menu to Control Katy Peary's Emotions!",
+  "author": "ryanhuang",
+  "icons": { "16": "icons/icon16x16.png",
+           "48": "icons/icon48x48.png",
+          "128": "icons/icon128x128.png" },
+  "permissions": [
+      "tabs",
+      "<all_urls>",
+      "webNavigation"
+  ],
+  "web_accessible_resources": [
+    "pears/*.png"
+  ],
+  "content_scripts": [
+    {
+        "matches": [
+          "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "icons/icon128x128.png",
+    "default_title" : "Emotinal Peary",
+    "default_popup": "popup.html"
+  }
+}
